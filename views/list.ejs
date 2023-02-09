@@ -7,12 +7,16 @@
         
         
             
-            <% for (var i = 0; i<addTask.length;i++) { %>
-                <div class="item">
-                    <input type="checkbox">
-                    <p><%= addTask[i] %></p>
-                </div>
-            <%    }%>
+            <% addTask.forEach(function(add) { %>
+                <form action="/delete" method="post">
+                    <div class="item">
+                        <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%=add._id%>">
+                        <p><%= add.name %></p>
+                    </div>
+                    <input type="hidden" name="listName" value="<%=kindOfDay%>">
+                </form>
+                
+            <%    })%>
             
             
         
