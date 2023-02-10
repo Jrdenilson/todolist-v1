@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const url = require(__dirname + "/url.js");
 const _ = require("lodash");
 
 const app = express();
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb+srv://admin-jrdenilson:1ffab5@cluster0.ttfhwf2.mongodb.net/todolistDB');
+mongoose.connect(url.getURL());
 
 const itemsSchema = new mongoose.Schema({
     name: String
