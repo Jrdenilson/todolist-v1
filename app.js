@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const url = require(__dirname + "/url.js");
+const url = require(__dirname + "/views/url.js");
 const _ = require("lodash");
 
 const app = express();
